@@ -3,10 +3,12 @@ import React, { useEffect, useState } from 'react';
 import SwiperCore, { Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
+import  Button, {OutlineButton} from '../button/Button'
+
 import tmdbApi, { category, movieType } from '../../api/tmdbApi';
 import apiConfig from '../../api/apiConfig';
 
-//import './hero-slide.scss';
+import './hero-slide.scss';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom';
 
 const HeroSlide = () => {
@@ -55,7 +57,7 @@ const HeroSlide = () => {
 }
 
 const HeroSlideItem = props => {
-  let history = useHistory()
+  let hisrory = useHistory()
 
   const item = props.item;
 
@@ -65,7 +67,24 @@ const HeroSlideItem = props => {
     <div
     style={{backgroundImage: `url(${background})`}}
     className={`hero-slide__item ${props.className}`}>
-      {item.title}
+      <div className="hero-slide__item__content container">
+        <div className="hero-slide__item__content__info">
+          <h2 className="title">{item.title}</h2>
+          <div className="overview">{item.overview}</div>
+          <div className="btns">
+            <Button onClick={() => hisrory.push('/movie/' + item.id)}>
+              Assista agora
+            </Button>
+            <OutlineButton onClick={() => console.log('trailer')} >
+              Assista o trailer
+            </OutlineButton>
+          </div>
+        </div>
+
+        <div className="hero-slide__item__content__poster">
+          <img src={apiConfig.w500Image(item.poster_path)} alt=""/>
+        </div>
+      </div>
     </div>
   )
 }

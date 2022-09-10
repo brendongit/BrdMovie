@@ -1,5 +1,5 @@
 import React from 'react'
-import PropTypes from 'propTypes'
+import PropTypes from 'prop-types';
 
 const Button =  props => {
   return (
@@ -11,7 +11,7 @@ const Button =  props => {
   )
 }
 
-const OutlineButton = props => {
+export const OutlineButton = props => {
   return (
     <Button
       className={`btn-outline ${props.className}`} 
