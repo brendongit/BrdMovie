@@ -14,6 +14,7 @@
   @include mobile {
     width: 30px;
     margin-right: 0;
+    justify-content: center;
   }
 }
 
@@ -70,7 +71,21 @@
         width: 100%;
       }
     }
+    @include mobile {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      height: 5rem;
+      width: 100%;
+      background-color: $body-bg;
+      padding: 0 2rem;
+      box-shadow: $box-shadow;
 
-    //38:47
+      @include flex(center, space-between);
+      & > *~* {
+        margin-left: 0;
+      }
+
+    }
   }
 }
