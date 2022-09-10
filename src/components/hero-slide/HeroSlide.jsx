@@ -127,4 +127,3 @@ const TrailerModal = props => {
 
 export default HeroSlide;
 
-// 1:31:29
