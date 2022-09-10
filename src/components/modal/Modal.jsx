@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-import PropTypes from 'propTypes'
+import PropTypes from 'prop-types'
 
 import './modal.scss'
 
